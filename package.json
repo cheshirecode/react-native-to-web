@@ -1,0 +1,44 @@
+{
+  "name": "react-native-web-with-storybook",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-plugin-expo-web": "^0.0.5",
+    "babel-plugin-react-native-web": "^0.4.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-imports": "^1.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.7",
+    "jest": "^23.2.0",
+    "jest-react-native": "^18.0.0",
+    "react-test-renderer": "16.3.1",
+    "style-loader": "^0.19.0"
+  },
+  "scripts": {
+    "clean": "npx npm-run-all clean:*",
+    "clean:bundler": "watchman watch-del-all && rm -fr $TMPDIR/metro*",
+    "clean:packages": "rm -rf node_modules/ && yarn cache clean && yarn",
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest",
+    "web": "webpack-dev-server -d --config ./webpack.config.js  --inline --hot --colors --content-base public/ --history-api-fallback",
+    "build": "NODE_ENV=production webpack -p --config ./webpack.config.js",
+    "relink": "react-native link && react-native eject"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "dependencies": {
+    "expo-web": "^0.0.12",
+    "react": "16.3.1",
+    "react-dom": "16.0.0",
+    "react-native": "~0.55.2",
+    "react-native-web": "^0.4.0",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "2.9.4"
+  }
+}
