@@ -1,16 +1,19 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import SubView from "./SubView";
-
+import React from 'react';
+import { StyleSheet, Text, ScrollView, Platform } from 'react-native';
+import SubView from './SubView';
+import Game2048 from './components/Game2048';
+import TicTacToe from './components/TicTacToe';
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up src/App.js to start working on your app!</Text>
+      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <Text>Open up src/App.js to start working on yo ur app!</Text>
         <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        {Platform.OS !== 'web' && <Text>Shake your phone to open the developer menu.</Text>}
         <SubView />
-      </View>
+        <Game2048 />
+        <TicTacToe />
+      </ScrollView>
     );
   }
 }
@@ -18,8 +21,10 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: '#fff'
+  },
+  contentContainer: {
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
