@@ -6,6 +6,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-native/all',
+    'plugin:import/errors',
+    'plugin:import/warnings',
     'prettier',
     'prettier/react'
   ],
@@ -14,5 +16,16 @@ module.exports = {
     ecmaVersion: 8,
     sourceType: 'module'
   },
-  plugins: ['babel', 'react', 'react-native', 'prettier']
+  plugins: ['babel', 'react', 'react-native', 'prettier'],
+  rules: {
+    'react/prop-types': 0,
+    'import/no-unresolved': [2, { ignore: ['react-?', 'Components/?'] }]
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ios.js', '.android.js', '.web.js']
+      }
+    }
+  }
 };

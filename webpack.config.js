@@ -2,6 +2,8 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const bundlerConfig = require('@rntw/bundler-config');
+const { modulesToCompile, babelConfig, moduleAliases } = bundlerConfig();
 
 const appDirectory = path.resolve(__dirname, './');
 
@@ -14,31 +16,14 @@ const babelLoaderConfiguration = {
   // Add every directory that needs to be compiled by Babel during the build.
   include: [
     path.resolve(appDirectory, 'src'),
-    path.resolve(appDirectory, 'node_modules/react-navigation'),
-    path.resolve(appDirectory, 'node_modules/react-native-tab-view'),
-    path.resolve(appDirectory, 'node_modules/react-native-paper'),
-    path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
-    path.resolve(appDirectory, 'node_modules/react-native-safe-area-view'),
-    path.resolve(appDirectory, 'node_modules/@expo/samples'),
-    path.resolve(appDirectory, 'node_modules/@expo/vector-icons'),
-    path.resolve(appDirectory, 'node_modules/react-native-platform-touchable')
+    ...modulesToCompile.map(x => `${appDirectory}/node_modules/${x}`)
   ],
   use: {
     loader: 'babel-loader',
     options: {
       // cacheDirectory: false,
       babelrc: false,
-      // Babel configuration (or use .babelrc)
-      // This aliases 'react-native' to 'react-native-web' and includes only
-      // the modules needed by the app.
-      plugins: [
-        'expo-web',
-        'react-native-web',
-        'transform-decorators-legacy',
-        ['transform-runtime', { helpers: false, polyfill: false, regenerator: true }]
-      ],
-      // The 'react-native' preset is recommended to match React Native's packager
-      presets: ['react-native']
+      ...babelConfig
     }
   }
 };
@@ -101,7 +86,9 @@ module.exports = {
     // builds to eliminate development checks and reduce build size. You may
     // wish to include additional optimizations.
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.NODE_ENV': JSON.stringify(
+        process.env.NODE_ENV || 'development'
+      ),
       __DEV__: process.env.NODE_ENV === 'production' || true
     })
   ],
@@ -114,11 +101,7 @@ module.exports = {
     symlinks: false,
     extensions: ['.web.js', '.js'],
     alias: {
-      './assets/images/expo-icon.png': './assets/images/expo-icon@2x.png',
-      './assets/images/slack-icon.png': './assets/images/slack-icon@2x.png',
-      '@expo/vector-icons': 'expo-web',
-      expo: 'expo-web',
-      'react-native': 'react-native-web'
+      ...moduleAliases
     }
   }
 };

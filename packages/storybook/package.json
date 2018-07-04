@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "@rntw/storybook",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "build-storybook -o ./dist -c ./.storybook",
+    "start": "start-storybook -p 9001 -c ./.storybook"
+  },
+  "dependencies": {
+    "@storybook/addon-options": "^3.4.0",
+    "@storybook/react": "^3.4.0"
+  },
+  "devDependencies": {
+    "url-loader": "^1.0.1"
+  },
+  "peerDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-native-web": "^0.8.5",
+    "babel-plugin-react-native-web": "0.8.6"
+  }
+}

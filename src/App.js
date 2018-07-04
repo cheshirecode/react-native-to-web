@@ -6,10 +6,15 @@ import TicTacToe from './components/TicTacToe';
 export default class App extends React.Component {
   render() {
     return (
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <Text>Open up src/App.js to start working on yo ur app!</Text>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}
+      >
+        <Text>Open up src/App.js to start working on your app!</Text>
         <Text>Changes you make will automatically reload.</Text>
-        {Platform.OS !== 'web' && <Text>Shake your phone to open the developer menu.</Text>}
+        {Platform.OS !== 'web' && (
+          <Text>Shake your phone to open the developer menu.</Text>
+        )}
         <SubView />
         <Game2048 />
         <TicTacToe />
@@ -17,8 +22,7 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
+const styleSheet = {
   container: {
     flex: 1,
     backgroundColor: '#fff'
@@ -27,4 +31,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   }
-});
+};
+const styles = StyleSheet.create(styleSheet);

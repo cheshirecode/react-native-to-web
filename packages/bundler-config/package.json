@@ -1,0 +1,7 @@
+{
+  "name": "@rntw/bundler-config",
+  "version": "0.1.0",
+  "description": "returns common config for bundlers (Webpack/Rollup) to consume",
+  "license": "MIT",
+  "private": true
+}

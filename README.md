@@ -1,9 +1,10 @@
-# react-native-web-with-storybook
+# react-native-to-web
 
-Example of RN with:
-
+This has a basic RN setup with
 - [react-native-web](https://github.com/necolas/react-native-web/tree/master/packages/react-native-web)
-- Storybook
+- Split up bundler config to use in 2 Webpack setups (root and Storybook)
+
+The plan is to add Rollup + Styleguidist
 
 # Steps
 
@@ -11,7 +12,13 @@ Example of RN with:
 - `react-native eject`
 - Rename folder and displayName in app.json
 - `react-native relink`
-- Set up Storybook:
-  - As website package to publish on Github's gh-pages
-  - Separate Webpack config (simpler and covers)
-  -
+- Fix anything that might have broken.
+
+OR 
+
+```
+git clone git@github.com:cheshirecode/react-native-to-web.git
+mv ./react-native-to-web ./<new name>
+cd ./<new name>
+yarn rename
+```

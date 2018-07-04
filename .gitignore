@@ -3,13 +3,13 @@
 # expo
 .expo/
 
-coverage
-node_modules
-dist
+**/coverage
+**/node_modules
+**/dist
 
 # production
-/build
-/public/assets
+**/build
+**/public/assets
 
 # misc
 .env.local
