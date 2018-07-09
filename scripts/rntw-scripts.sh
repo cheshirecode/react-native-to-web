@@ -56,11 +56,14 @@ case "$COMMAND" in
   ;;
 "clean"*)
   "$0" clean:bundler &
-  e1=$!
+  p1=$!
   "$0" clean:packages &
-  e2=$!
+  p2=$!
   # wait until both are finished and collect exit codes
-  wait
+  wait $p1
+  e1=$?
+  wait $p2
+  e2=$?
   ERROR=$e1 || $e2
   ;;
 "reinstall"*)

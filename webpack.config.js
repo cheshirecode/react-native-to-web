@@ -1,5 +1,4 @@
-// web/webpack.config.js
-
+//thanks to https://github.com/necolas/react-native-web/blob/master/packages/examples/webpack.config.js
 const path = require('path');
 const webpack = require('webpack');
 const bundlerConfig = require('@rntw/bundler-config');

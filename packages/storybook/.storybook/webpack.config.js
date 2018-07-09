@@ -1,3 +1,4 @@
+//modified heavily from https://github.com/necolas/react-native-web/blob/master/packages/website/storybook/.storybook/webpack.config.js
 const path = require('path');
 const webpack = require('webpack');
 const bundlerConfig = require('@rntw/bundler-config');

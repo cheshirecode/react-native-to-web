@@ -1,5 +1,5 @@
 {
-  "name": "123",
+  "name": "react-native-for-web",
   "version": "0.1.0",
   "engines": {
     "node": ">=8.11.2"
@@ -15,6 +15,7 @@
     "ios": "react-native run-ios",
     "test": "jest",
     "rntw-scripts": "./scripts/rntw-scripts.sh",
+    "reinstall": "./scripts/rntw-scripts.sh reinstall",
     "web": "./scripts/rntw-scripts.sh web",
     "web:build": "./scripts/rntw-scripts.sh web:build",
     "rename": "./scripts/rntw-scripts.sh rename",

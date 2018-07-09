@@ -2,7 +2,7 @@
 CURRENT_FOLDER=$(pwd)
 
 NAME=$1
-if [ "$NAME" == "-d" ] || [ "$NAME" == "--debug" ];
+if [ "$NAME" = "-d" ] || [ "$NAME" = "--debug" ];
 then
   echo -e "${@:2}"
   exit
