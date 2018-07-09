@@ -1,5 +1,5 @@
 {
-  "name": "react-native-to-web",
+  "name": "123",
   "version": "0.1.0",
   "engines": {
     "node": ">=8.11.2"
@@ -10,16 +10,15 @@
     "packages/*"
   ],
   "scripts": {
-    "reinstall": "rntw-scripts reinstall",
-    "clean:bundler": "rntw-scripts clean:bundler",
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "test": "jest",
-    "web": "rntw-scripts web",
-    "web:build": "rntw-scripts web:build",
-    "rename": "rntw-scripts rename",
-    "storybook": "rntw-scripts storybook",
+    "rntw-scripts": "./scripts/rntw-scripts.sh",
+    "web": "./scripts/rntw-scripts.sh web",
+    "web:build": "./scripts/rntw-scripts.sh web:build",
+    "rename": "./scripts/rntw-scripts.sh rename",
+    "storybook": "./scripts/rntw-scripts.sh storybook",
     "precommit": "lint-staged"
   },
   "jest": {

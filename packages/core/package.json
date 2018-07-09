@@ -6,7 +6,6 @@
   "private": true,
   "dependencies": {
     "@rntw/bundler-config": "0.1.0",
-    "@rntw/scripts": "0.1.0",
     "react": "^16.3.2",
     "react-native": "~0.55.2"
   },

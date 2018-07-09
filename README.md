@@ -17,8 +17,5 @@ The plan is to add Rollup + Styleguidist
 OR 
 
 ```
-git clone git@github.com:cheshirecode/react-native-to-web.git
-mv ./react-native-to-web ./<new name>
-cd ./<new name>
-yarn rename
+curl -sS https://raw.githubusercontent.com/cheshirecode/react-native-to-web/master/scripts/install.sh | bash -s -- {{FOLDER_NAME}}
 ```

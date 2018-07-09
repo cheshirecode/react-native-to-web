@@ -1,9 +1,0 @@
-{
-  "name": "@rntw/scripts",
-  "version": "0.1.0",
-  "bin": {
-    "rntw-scripts": "./rntw.sh"
-  },
-  "license": "MIT",
-  "private": true
-}

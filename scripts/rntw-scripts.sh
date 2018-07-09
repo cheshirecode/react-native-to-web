@@ -11,33 +11,30 @@ read -r -d '' HELP_TEXT <<- EOF
   Bugs - 
 EOF
 
+error_msg() {
+  read -r -d '' ERROR_MSG <<- EOF
+  Invalid command "$1". Refer to help text.
+EOF
+  echo "$ERROR_MSG"
+}
+
 if [[ $# -eq 0 ]] ; then
   echo -e "$HELP_TEXT"
   exit 0
 fi
 
-NAME=$1
+# assume this is run at 
+COMMAND=$1
+SCRIPT_PATH=$(dirname "$0")
 RESPONSE=""
-shift
-CURRENT_FOLDER_NAME=${PWD##*/}
-case "$NAME" in
-"storybook"|"styleguidist"*)
-  cd "packages/$NAME" || return
-  yarn start
+
+case "$COMMAND" in
+"-h|--help"*)
+  RESPONSE="$HELP_TEXT"
   ;;
-"rename"*)
-  if [ ! -z "$1" ];
-  then
-    CURRENT_FOLDER_NAME=$1
-  else 
-    CURRENT_FOLDER_NAME=${PWD##*/}
-  fi
-  NO_HYPHEN_NAME=${CURRENT_FOLDER_NAME//-/}
-  npx json -I -f package.json -e "this.name=\"$CURRENT_FOLDER_NAME\""
-  npx json -I -f app.json -e "this.name=\"$NO_HYPHEN_NAME\"; this.displayName=\"$NO_HYPHEN_NAME\"; " 
-  rm -rf android ios
-  react-native link
-  react-native eject
+"storybook"|"styleguidist"*)
+  cd "packages/$COMMAND" || return
+  yarn start
   ;;
 "web:build"*)
   NODE_ENV=production node_modules/.bin/webpack -p --config ./webpack.config.js
@@ -57,18 +54,27 @@ case "$NAME" in
   yarn cache clean
   echo "Cleared npm modules and cache"
   ;;
-"reinstall"*)
+"clean"*)
   "$0" clean:bundler &
   e1=$!
   "$0" clean:packages &
   e2=$!
   # wait until both are finished and collect exit codes
   wait
+  ERROR=$e1 || $e2
+  ;;
+"reinstall"*)
+  "$0" clean
   yarn
-  ERROR=$e1 || $e2 || $!
   ;;
 *)
-  RESPONSE="$HELP_TEXT"
+  # just pass arguments after command to the matching script name (rename -> rename.sh)
+  if [ -f "$SCRIPT_PATH/$COMMAND.sh" ];
+  then
+    "$SCRIPT_PATH/$COMMAND.sh" "${@:2}"
+  else
+    RESPONSE=$(error_msg "$COMMAND")
+  fi
   ;;
 esac
 [ -z "$ERROR" ] && ERROR=$?
