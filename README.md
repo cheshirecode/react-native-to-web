@@ -6,16 +6,10 @@ This has a basic RN setup with
 
 The plan is to add Rollup + Styleguidist
 
-# Steps
+# Quick installation
 
-- `create-react-native-app --with-web-support`
-- `react-native eject`
-- Rename folder and displayName in app.json
-- `react-native relink`
-- Fix anything that might have broken.
-
-OR 
-
+With a folder name at hand
 ```
 curl -sS https://raw.githubusercontent.com/cheshirecode/react-native-to-web/master/scripts/install.sh | bash -s -- {{FOLDER_NAME}}
 ```
+
