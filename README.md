@@ -6,7 +6,7 @@ This has a basic RN setup with
 
 ~~The plan is to add Rollup + Styleguidist and more~~
 
-As the PoC work has been completed, this current repo will be archived in the near future, it's exported to (https://gitlab.com/cheshireCode/react-native-to-web)[GitLab] and further development happens there.
+As the PoC work has been completed, this current repo will be archived in the near future, it's exported to [GitLab](https://gitlab.com/cheshireCode/react-native-to-web) and further development happens there.
 
 # Quick installation
 
