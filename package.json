@@ -2,7 +2,7 @@
   "name": "react-native-for-web",
   "version": "0.1.0",
   "engines": {
-    "node": ">=8.11.2"
+    "node": ">=6.14.3"
   },
   "private": true,
   "author": "cheshireCode",
