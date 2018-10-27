@@ -3,5 +3,6 @@
   "version": "0.1.0",
   "description": "returns common config for bundlers (Webpack/Rollup) to consume",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "main": "./index.js"
 }

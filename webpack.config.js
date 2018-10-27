@@ -1,8 +1,13 @@
 //thanks to https://github.com/necolas/react-native-web/blob/master/packages/examples/webpack.config.js
 const path = require('path');
 const webpack = require('webpack');
-const bundlerConfig = require('@rntw/bundler-config');
-const { modulesToCompile, babelConfig, moduleAliases } = bundlerConfig();
+const {
+  modulesToCompile,
+  babelConfig,
+  moduleAliases
+} = require('@rntw/bundler-config/default');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 const appDirectory = path.resolve(__dirname, './');
 
@@ -58,11 +63,12 @@ const ttfLoaderConfiguration = {
     path.resolve(appDirectory, 'node_modules/react-native-vector-icons')
   ]
 };
-
+const { NODE_ENV } = process.env;
+const isDev = NODE_ENV === 'development';
 module.exports = {
   // your web-specific entry file
   entry: path.resolve(appDirectory, 'src/index.web.js'),
-  devtool: 'eval',
+  devtool: isDev ? 'inline-source-map' : 'source-map',
 
   // configures where the build ends up
   output: {
@@ -70,7 +76,6 @@ module.exports = {
     publicPath: '/assets/',
     path: path.resolve(appDirectory, './public/assets')
   },
-
   module: {
     rules: [
       babelLoaderConfiguration,
@@ -89,9 +94,17 @@ module.exports = {
         process.env.NODE_ENV || 'development'
       ),
       __DEV__: process.env.NODE_ENV === 'production' || true
-    })
+    }),
+    ...(process.env.ANALYZE
+      ? [
+          new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            openAnalyzer: true
+          })
+        ]
+      : [])
   ],
-  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
+  mode: isDev || process.env.WEBPACK_SERVE ? 'development' : 'production',
 
   resolve: {
     // If you're working on a multi-platform React Native app, web-specific

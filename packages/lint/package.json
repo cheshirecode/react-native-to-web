@@ -2,7 +2,7 @@
   "name": "@rntw/eslint-config-lint",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
     "babel-eslint": "^8.0.2",
     "eslint": "4.18.2",
     "eslint-config-prettier": "2.9.0",

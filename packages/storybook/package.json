@@ -6,11 +6,9 @@
     "build": "build-storybook -o ./dist -c ./.storybook",
     "start": "start-storybook -p 9001 -c ./.storybook"
   },
-  "dependencies": {
-    "@storybook/addon-options": "^3.4.0",
-    "@storybook/react": "^3.4.0"
-  },
   "devDependencies": {
+    "@storybook/addon-options": "^3.4.0",
+    "@storybook/react": "^3.4.0",
     "url-loader": "^1.0.1"
   },
   "peerDependencies": {

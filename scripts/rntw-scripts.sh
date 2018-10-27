@@ -47,6 +47,9 @@ case "$COMMAND" in
 "clean:bundler"*)
   rm -rf watch-del-all
   rm -rf "$TMPDIR/metro*"
+  rm -rf "$TMPDIR/react-native-packager-cache-*"
+  rm -rf "$TMPDIR/metro-bundler-cache-*"
+  rm -rf "$TMPDIR/haste-map-react-native-packager-*"
   echo "Cleared Metro bundler-related caches"
   ;;
 "clean:packages"*)

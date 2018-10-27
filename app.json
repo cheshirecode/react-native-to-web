@@ -1,4 +1,7 @@
 {
   "name": "reactnativetoweb",
-  "displayName": "reactnativetoweb"
+  "displayName": "reactnativetoweb",
+  "android": {
+    "package": "com.company.reactnativetoweb"
+  }
 }

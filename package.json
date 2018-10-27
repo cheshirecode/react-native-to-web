@@ -1,8 +1,8 @@
 {
-  "name": "react-native-for-web",
+  "name": "react-native-to-web",
   "version": "0.1.0",
   "engines": {
-    "node": ">=6.14.3"
+    "node": ">=6"
   },
   "private": true,
   "author": "cheshireCode",
@@ -34,7 +34,8 @@
       ]
     },
     "ignore": [
-      "dist"
+      "dist",
+      "public"
     ]
   }
 }

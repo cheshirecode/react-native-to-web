@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+# Requires:
+#   node > 6
+#   yarn > 1.1
+#   curl
 CURRENT_FOLDER=$(pwd)
-
 NAME=$1
 if [ "$NAME" = "-d" ] || [ "$NAME" = "--debug" ];
 then
@@ -11,7 +14,7 @@ fi
 if [ ! -z "$NAME" ] && [ ! -d "$NAME" ];
 then
   cd "$TMPDIR" || exit
-  curl -sSL https://github.com/cheshirecode/react-native-to-web/archive/master.zip | tar xJ
+  curl -sSL https://gitlab.com/cheshireCode/react-native-to-web/-/archive/master/react-native-to-web-master.tar.gz | tar xJ
   mv react-native-to-web-master "$CURRENT_FOLDER/$NAME"
   rm -f react-native-to-web-master
   cd "$CURRENT_FOLDER/$NAME" || exit
