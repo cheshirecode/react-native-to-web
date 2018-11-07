@@ -16,7 +16,7 @@
     "css-loader": "^1.0.0",
     "expo-web": "^0.0.14",
     "file-loader": "^2.0.0",
-    "react": "^16.3.2",
+    "react": "^16.6.1",
     "react-art": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-native": "~0.57.4",
