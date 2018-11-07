@@ -21,7 +21,7 @@
     "react-dom": "^16.6.1",
     "react-native": "~0.57.4",
     "react-native-web": "^0.9.4",
-    "react-test-renderer": "16.6.0",
+    "react-test-renderer": "16.6.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.8.1",
     "webpack-cli": "^3.0.8"
