@@ -13,7 +13,7 @@
     "babel-plugin-transform-imports": "^1.4.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-react-native": "^4.0.0",
-    "css-loader": "^1.0.0",
+    "css-loader": "^2.0.0",
     "expo-web": "^0.0.14",
     "file-loader": "^2.0.0",
     "react": "^16.3.2",
