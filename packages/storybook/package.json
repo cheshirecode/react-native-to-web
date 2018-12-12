@@ -7,14 +7,14 @@
     "start": "start-storybook -p 9001 -c ./.storybook"
   },
   "devDependencies": {
-    "@storybook/addon-options": "^3.4.0",
-    "@storybook/react": "^3.4.0",
+    "@storybook/addon-options": "^4.0.0",
+    "@storybook/react": "^4.0.0",
     "url-loader": "^1.0.1"
   },
   "peerDependencies": {
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
-    "react-native-web": "^0.8.5",
-    "babel-plugin-react-native-web": "0.8.6"
+    "react-native-web": "^0.9.5",
+    "babel-plugin-react-native-web": "0.9.5"
   }
 }
