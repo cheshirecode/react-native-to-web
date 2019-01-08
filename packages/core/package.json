@@ -15,7 +15,7 @@
     "babel-preset-react-native": "^4.0.0",
     "css-loader": "^2.0.0",
     "expo-web": "^0.0.14",
-    "file-loader": "^2.0.0",
+    "file-loader": "^3.0.0",
     "react": "^16.6.1",
     "react-art": "^16.6.1",
     "react-dom": "^16.6.1",
