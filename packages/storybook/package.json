@@ -14,7 +14,7 @@
   "peerDependencies": {
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
-    "react-native-web": "^0.9.5",
+    "react-native-web": "^0.10.0",
     "babel-plugin-react-native-web": "0.9.13"
   }
 }
