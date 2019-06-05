@@ -9,7 +9,7 @@
   "devDependencies": {
     "@storybook/addon-options": "^4.0.0",
     "@storybook/react": "^4.0.0",
-    "url-loader": "^1.0.1"
+    "url-loader": "^2.0.0"
   },
   "peerDependencies": {
     "react": "^16.6.1",
